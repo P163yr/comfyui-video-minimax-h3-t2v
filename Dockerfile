@@ -1,5 +1,5 @@
-# clean base image containing only comfyui, comfy-cli and comfyui-manager
 FROM runpod/worker-comfyui:5.8.4-base
 
-# Models now live on a RunPod Network Volume instead of being baked into the image.
-# See the volume folder layout below — no download steps needed here anymore.
+# MiniMax H3 native support landed in ComfyUI v0.30.0 (Aug 3, 2026), after this
+# base image was built. Move ComfyUI core to the current stable release.
+RUN comfy update comfy --version latest
